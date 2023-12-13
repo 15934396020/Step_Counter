@@ -23,7 +23,7 @@ void create_csv(char* file_name, THREE_AXIS_INFO* data, int* steps){
 	}
 	// Steps
 	for(int k = 0; k < 5; k++){
-		fprintf(fp, "%\"%d Minute(s) Steps: \",%d\n", k+1, steps[k]);
+		fprintf(fp, "\"%d Minute(s) Steps: \",%d\n", k + 1, steps[k]);
 	}
 	// Close the file
 	fclose(fp);
@@ -48,7 +48,7 @@ int* simulate(void){
 	// Create/Write the file
 	FILE *fp = fopen("Thresholds.csv", "w");
 	// First Line Thresholds
-	fprintf(fp, "%\"Thresholds\",\"Primary Axis\"\n");
+	fprintf(fp, "\"%s\",\"%s\"\n", "Thresholds", "Primary Axis");
 	for(int i = 0; i < DATA_SIZE/Dynamic_Max_Count; i++){
 		if(i==0){
 			fprintf(fp, "%lf,%d\n", thresholds[i],primary_axis);
